@@ -1,5 +1,5 @@
 <template>
-  <button class="button p-L t-white">{{ text }}</button>
+  <button class="button p-L t-red">{{ text }}</button>
 </template>
 
 <script>
@@ -9,13 +9,17 @@ export default {
       required: true,
       type: String,
     },
+    link: {
+      required: false,
+      type: String,
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
 .button {
-  background: #ea544a;
+  background: #ffffff;
   padding: 12px 40px;
   border-radius: 10px;
   outline: 0;
@@ -23,8 +27,8 @@ export default {
   font-weight: 600;
   &:hover {
     background: transparent;
-    color: #ea544a;
-    border: 2px solid #ea544a;
+    color: #ffffff;
+    border: 2px solid #ffffff;
   }
 }
 </style>

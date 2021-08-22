@@ -1,18 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap');
 
 * {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
 .h1 {
-  font-size: 48px;
-  font-weight: 600;
+  font-size: 61px;
+  font-weight: 700;
 }
 
 .h1-S {
-  font-size: 26px;
-  font-weight: 400;
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.h2 {
+  font-size: 48px;
+  font-weight: 600;
 }
 
 .h2-S {
@@ -25,9 +29,15 @@
   font-weight: 600;
 }
 
+.p-S {
+  font-size: 16px;
+  font-weight: 600;
+}
+
 .p {
   font-size: 18px;
   font-weight: 400;
+  line-height: 31px;
 }
 
 .p-L {
@@ -35,3 +45,15 @@
   font-weight: 400;
 }
 
+.p-XL {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.t-b {
+  font-weight: bold;
+}
+
+.t-sb {
+  font-weight: 600;
+}

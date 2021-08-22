@@ -1,6 +1,14 @@
 <template>
-  <div>
+  <div class="app">
     <index-offer />
+
+    <div class="screen fd-c ai-c" id="main">
+      <index-about />
+      <index-services />
+      <index-strategy />
+      <index-faq />
+      <index-contact />
+    </div>
   </div>
 </template>
 
@@ -9,3 +17,16 @@ export default {
   layout: "default",
 };
 </script>
+
+<style lang="scss">
+.app {
+  .screen {
+    position: static;
+    top: 0;
+    z-index: 5;
+    width: 100%;
+    background: #ffffff;
+  }
+}
+
+</style>

@@ -9,6 +9,10 @@
   outline: 0;
   border: 0;
   transition: .3s;
+  &::selection {
+    background: #EA544A;
+    color: #ffffff;
+  }
 }
 
 html,
@@ -18,10 +22,11 @@ body {
 }
 
 body {
-  background-image: url('@/assets/images/desktop-bg.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  // background-image: url('@/assets/images/desktop-bg.svg');
+  // background-repeat: no-repeat;
+  // background-position: center;
+  // background-size: cover;
+  
 }
 
 .container {
@@ -31,5 +36,5 @@ body {
 }
 
 .shadow {
-  box-shadow: 3px 0px 15px rgba(203, 203, 203, 0.52);
+  box-shadow: 3px 0px 15px #55555552;
 }

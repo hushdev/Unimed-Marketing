@@ -16,16 +16,16 @@ export default {
 <style lang="scss" scoped>
 .button {
   background: transparent;
-  color: #ea544a;
+  color: #ffffff;
   border-radius: 10px;
   padding: 12px 40px;
   border-radius: 10px;
   outline: 0;
   font-weight: 600;
-  border: 2px solid #ea544a;
+  border: 2px solid #ffffff;
   &:hover {
-    background: #ea544a;
-    color: #ffffff;
+    background: #ffffff;
+    color: #EA544A;
   }
 }
 </style>

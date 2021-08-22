@@ -1,5 +1,5 @@
 <template>
-  <div class="nav shadow fd-c ai-c">
+  <div class="nav white shadow fd-c ai-c">
     <div class="logo"><img :src="Logo" alt="" /></div>
     <a v-for="(item, idx) in items" :key="idx"><img :src="item.img" /></a>
   </div>
@@ -36,6 +36,7 @@ export default {
   border-radius: 10px;
   overflow: hidden;
   position: fixed;
+  z-index: 20;
   left: 39px;
   top: 50%;
   transform: translateY(-50%);
@@ -45,9 +46,8 @@ export default {
   }
   a {
     padding: 27px 0;
-    
-    img {
-      fill: red;
+    &:hover {
+      transform: scale(.9);
     }
     &:first-child {
       padding-top: 55px;

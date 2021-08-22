@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'unimed-marketing',
+    title: 'Unimed Marketing',
     htmlAttrs: {
       lang: 'ru'
     },
@@ -15,7 +15,12 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
+      {
+        rel: 'apple-touch-icon',
+        type: 'image/png',
+        href: '/apple.png'
+      }
     ]
   },
 
@@ -26,7 +31,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    
+    { src: '~/plugins/vue-smooth-scroll', ssr: false }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -38,13 +43,18 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/i18n',
   ],
 
+  i18n: {},
+  
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    babel:{
+    babel: {
       plugins: [
-        ['@babel/plugin-proposal-private-methods', { loose: true }]
+        ["@babel/plugin-proposal-class-properties", { "loose": true }],
+        ["@babel/plugin-proposal-private-methods", { "loose": true }],
+        ["@babel/plugin-proposal-private-property-in-object", { "loose": true }]
       ]
     }
   }
