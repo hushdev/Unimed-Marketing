@@ -143,7 +143,7 @@ export default {
     }
     form {
       border-radius: 15px;
-      box-shadow: 0px 4px 19px rgba(188, 188, 188, 0.28);
+      box-shadow: 0 4px 19px rgba(188, 188, 188, 0.28);
       padding: 52px 50px;
       max-width: calc(522px - 100px);
       width: 100%;
@@ -169,9 +169,12 @@ export default {
   }
   .map {
     margin-top: 54px;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0px 4px 19px rgba(188, 188, 188, 0.28);
+
+    iframe {
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 19px rgba(188, 188, 188, 0.28);
+    }
   }
   .credentials {
     padding: 36px 0;

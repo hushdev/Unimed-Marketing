@@ -41,7 +41,7 @@
         </div>
       </div>
       <div class="info fd-r ai-b jc-b">
-        <div class="card white">
+        <div class="card">
           <h3 class="h2-S t-b t-red">{{ target.name }}</h3>
           <p v-html="target.text" class="p t-black mt-4"></p>
         </div>
@@ -173,6 +173,27 @@ export default {
       .card {
         max-width: 700px;
         width: 100%;
+      }
+    }
+  }
+}
+@media (max-width: 834px) {
+  .services {
+    .container {
+      .row {
+        .card {
+          padding: 30px 25px;
+          margin: 10px;
+        }
+      }
+      .info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        a {
+          align-self: center;
+          margin-top: 30px;
+        }
       }
     }
   }

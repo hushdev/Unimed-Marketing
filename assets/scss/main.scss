@@ -9,6 +9,7 @@
   outline: 0;
   border: 0;
   transition: .3s;
+  box-sizing: border-box;
   &::selection {
     background: #EA544A;
     color: #ffffff;
@@ -18,21 +19,13 @@
 html,
 body {
   overflow-x: hidden;
-  width: 100vw;
-}
-
-body {
-  // background-image: url('@/assets/images/desktop-bg.svg');
-  // background-repeat: no-repeat;
-  // background-position: center;
-  // background-size: cover;
-  
 }
 
 .container {
   max-width: 1280px;
   width: 100%;
-  margin: auto;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
 .shadow {

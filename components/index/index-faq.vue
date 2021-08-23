@@ -1,5 +1,5 @@
 <template>
-  <div class="faq">
+  <div class="faq" id="faq">
     <div class="container">
       <app-h2 text="Часто задаваемые вопросы" />
       <p class="h3 t-gray">
@@ -91,7 +91,7 @@ export default {
         border-radius: 10px;
         margin-bottom: 30px;
         background: #ffffff;
-        box-shadow: 0px 4px 19px rgba(188, 188, 188, 0.28);
+        box-shadow: 0 4px 19px rgba(188, 188, 188, 0.28);
         .question {
           padding: 0 20px 0 0 !important;
           border-radius: 10px;

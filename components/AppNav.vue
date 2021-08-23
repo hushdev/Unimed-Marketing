@@ -1,7 +1,7 @@
 <template>
   <div class="nav white shadow fd-c ai-c">
     <div class="logo"><img :src="Logo" alt="" /></div>
-    <a v-for="(item, idx) in items" :key="idx"><img :src="item.img" /></a>
+    <a v-for="(item, idx) in items" :key="idx" :href="item.anchor" v-smooth-scroll><img :src="item.img" /></a>
   </div>
 </template>
 <script>
@@ -19,12 +19,12 @@ export default {
   data: () => ({
     Logo,
     items: [
-      { img: Home, anchor: "#" },
-      { img: Info, anchor: "#" },
-      { img: Coin, anchor: "#" },
-      { img: Target, anchor: "#" },
-      { img: Question, anchor: "#" },
-      { img: Phone, anchor: "#" },
+      { img: Home, anchor: "#offer" },
+      { img: Info, anchor: "#about" },
+      { img: Coin, anchor: "#services" },
+      { img: Target, anchor: "#strategy" },
+      { img: Question, anchor: "#faq" },
+      { img: Phone, anchor: "#contact" },
     ],
   }),
 };
@@ -38,8 +38,8 @@ export default {
   position: fixed;
   z-index: 20;
   left: 39px;
-  top: 50%;
-  transform: translateY(-50%);
+  bottom: 50%;
+  transform: translateY(50%);
   .logo {
     padding: 12px 0;
     background: #ea544a;
@@ -47,10 +47,43 @@ export default {
   a {
     padding: 27px 0;
     &:hover {
-      transform: scale(.9);
+      transform: scale(0.9);
     }
     &:first-child {
       padding-top: 55px;
+    }
+  }
+}
+
+@media (max-width: 1640px) {
+  .nav {
+    left: 15px;
+    width: 77px;
+    a {
+      padding: 20px 0;
+      img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}
+@media (max-width: 1500px) {
+  .nav {
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: row;
+    height: 82px;
+    max-width: 507px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    a {
+      padding: 0 20px;
+      &:first-child {
+        padding: 0 20px 0 55px;
+      }
     }
   }
 }

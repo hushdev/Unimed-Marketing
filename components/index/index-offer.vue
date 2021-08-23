@@ -1,15 +1,18 @@
 <template>
-  <div class="offer fd-c">
+  <div class="offer fd-c" id="offer">
     <div class="screen fd-r ai-c">
       <div class="langs container fd-r jc-r white">
         <span class="t-black h3">Uz</span>
         <span class="t-red h3 ml-1">Ru</span>
       </div>
-      <div class="container fd-r ai-c jc-b">
+      <div class="container fd-r ai-c jc-b fd-c-M ai-t-M">
         <div class="card">
           <app-h1 text="Аналитика" sub="Тенденция и прогноз" />
         </div>
-        <img src="@/assets/images/offer/offer-item1.svg" class="offer-item" />
+        <img
+          src="@/assets/images/offer/offer-item1.svg"
+          class="offer-item as-c-M"
+        />
       </div>
     </div>
     <div class="screen fd-r ai-c red-offer">
@@ -17,7 +20,7 @@
         <span class="t-black h3">Uz</span>
         <span class="t-red h3 ml-1">Ru</span>
       </div>
-      <div class="container fd-r ai-c jc-b">
+      <div class="container fd-r ai-c jc-b fd-c-M ai-t-M">
         <div class="card">
           <app-h1
             text="Маркетинг и стратегия "
@@ -25,7 +28,10 @@
             red
           />
         </div>
-        <img src="@/assets/images/offer/offer-item2.svg" class="offer-item" />
+        <img
+          src="@/assets/images/offer/offer-item2.svg"
+          class="offer-item as-c-M"
+        />
       </div>
     </div>
     <div class="screen fd-r ai-c">
@@ -33,11 +39,14 @@
         <span class="t-black h3">Uz</span>
         <span class="t-red h3 ml-1">Ru</span>
       </div>
-      <div class="container fd-r ai-c jc-b">
+      <div class="container fd-r ai-c jc-b fd-c-M ai-t-M">
         <div class="card">
           <app-h1 text="Гарантированный результат" />
         </div>
-        <img src="@/assets/images/offer/offer-item3.svg" class="offer-item" />
+        <img
+          src="@/assets/images/offer/offer-item3.svg"
+          class="offer-item as-c-M"
+        />
       </div>
     </div>
     <div class="screen fd-r ai-c red-offer">
@@ -45,7 +54,7 @@
         <span class="t-black h3">Uz</span>
         <span class="t-red h3 ml-1">Ru</span>
       </div>
-      <div class="container fd-r ai-c jc-b">
+      <div class="container fd-r ai-c jc-b fd-c-M ai-t-M">
         <div class="card">
           <app-h1
             text="UNIMED"
@@ -53,12 +62,15 @@
             red
             image
           />
-          <div class="buttons mt-6">
+          <div class="buttons mt-6 fd-r ai-c">
             <app-anchor text="Подробнее" link="#main" class="mr-3" />
             <btn-secondary text="Смотреть видео" />
           </div>
         </div>
-        <img src="@/assets/images/offer/offer-item4.svg" class="offer-item" />
+        <img
+          src="@/assets/images/offer/offer-item4.svg"
+          class="offer-item last-offer as-c-M"
+        />
         <div class="socials container fd-r ai-c">
           <a href=""
             ><img src="@/assets/images/facebook.svg" alt="Facebook"
@@ -96,9 +108,11 @@
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    width: 100%;
+    // width: calc(100%);
     min-height: 100vh;
-
+    .card {
+      width: 440px;
+    }
     &:nth-child(1) {
       z-index: 1;
       background: url("@/assets/images/offer/bg1.svg") no-repeat top;
@@ -131,30 +145,54 @@
     }
   }
   .langs {
-    position: absolute;
-    left: 50%;
-    top: 30px;
-    transform: translateX(-50%);
+   position: absolute;
+   top: 30px;
+   left: 50%;
+   transform: translateX(-50%);
     background: transparent;
     span {
       cursor: pointer;
     }
   }
 
-  img {
+  .offer-item {
     max-width: 618px;
-    width: 100%;
-    height: auto;
+    min-width: 100px;
+    width: 100% !important;
+    height: auto !important;
     transition: 0.5s ease-in-out;
     &:hover {
       transform: scale(0.95);
     }
   }
+  .last-offer {
+    max-width: 350px !important;
+  }
 }
-.offer-item {
-  max-width: 722px;
-  max-height: 450px;
-  width: 100%;
-  height: auto;
+
+@media (max-width: 834px) {
+  .offer {
+    .screen {
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4) {
+        background-size: contain !important;
+      }
+      .card {
+        width: 100%;
+      }
+      .langs {
+        top: 15px;
+      }
+      .socials {
+        display: none;
+      }
+    }
+  }
+  .offer-item {
+    margin-top: 50px;
+    max-width: 100%;
+  }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="strategy">
+  <div class="strategy" id="strategy">
     <div class="container">
       <div class="heading">
         <app-h2 text="Стратегия развития" />

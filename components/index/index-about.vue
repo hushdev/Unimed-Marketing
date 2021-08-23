@@ -1,7 +1,11 @@
 <template>
-  <div class="about fd-c jc-c">
+  <div class="about fd-c jc-c" id="about">
     <div class="container fd-r ai-c">
-      <img src="@/assets/images/about/item.svg" alt="Информация о нас" />
+      <img
+        src="@/assets/images/about/item.svg"
+        alt="Информация о нас"
+        class="about-item"
+      />
       <div class="card fd-c">
         <h2 class="h2-S t-black fd-c">
           <span class="h3 t-red mb-1">О нас</span>
@@ -49,15 +53,18 @@
   z-index: 10;
   box-shadow: 10px -15px 10px #4e4e4e1a;
   .container {
-    img {
+    img.about-item {
       max-width: 548px;
+      min-width: 200px;
       width: 100%;
-      transition: .5s ease-in-out;
+
+      transition: 0.5s ease-in-out;
       &:hover {
-        transform: scale(.95);
+        transform: scale(0.95);
       }
     }
     .card {
+      width: 100%;
       .info {
         border-radius: 14px;
         padding: 14px 0;
@@ -65,7 +72,8 @@
         .info-item {
           padding: 0 28px;
           max-width: 221px;
-          width: 100%;
+          min-width: 100px;
+          width: auto;
           &:nth-child(2) {
             border-left: 1px solid rgba(255, 255, 255, 0.28);
             border-right: 1px solid rgba(255, 255, 255, 0.28);
@@ -80,6 +88,47 @@
         &:hover {
           img {
             transform: translateX(10px) translateY(2px);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1420px) {
+  .about {
+    .container {
+      flex-direction: row-reverse;
+      .card {
+        margin-right: 20px;
+        .info {
+          .info-item {
+            padding: 5px 10px;
+          }
+        }
+        .more {
+          align-self: flex-start;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 834px) {
+  .about {
+    .container {
+      flex-direction: column-reverse;
+      img.about-item {
+        max-width: 508px;
+      }
+      .card {
+        margin: 0 0 34px 0;
+        .info {
+          display: flex;
+          justify-content: space-between  ;
+          .info-item {
+            font-size: 14px;
+            text-align: center;
           }
         }
       }
