@@ -116,6 +116,8 @@
 
 @media (max-width: 834px) {
   .about {
+  background-position: bottom left;
+
     .container {
       flex-direction: column-reverse;
       img.about-item {

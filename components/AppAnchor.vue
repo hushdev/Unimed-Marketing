@@ -53,4 +53,11 @@ export default {
     border: 2px solid #ffffff;
   }
 }
+
+@media (max-width:480px) {
+  .button {
+    padding: 10px 20px !important ;
+    font-size: 14px !important;
+  }
+}
 </style>

@@ -179,6 +179,7 @@ export default {
 }
 @media (max-width: 834px) {
   .services {
+    background: #ffffff;
     .container {
       .row {
         .card {

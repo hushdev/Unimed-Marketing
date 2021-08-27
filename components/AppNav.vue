@@ -1,7 +1,11 @@
 <template>
   <div class="nav white shadow fd-c ai-c">
-    <div class="logo"><img :src="Logo" alt="" /></div>
-    <a v-for="(item, idx) in items" :key="idx" :href="item.anchor" v-smooth-scroll><img :src="item.img" /></a>
+    <div class="logo">
+      <img :src="Logo" alt />
+    </div>
+    <a v-for="(item, idx) in items" :key="idx" :href="item.anchor" v-smooth-scroll>
+      <img :src="item.img" />
+    </a>
   </div>
 </template>
 <script>
@@ -74,15 +78,55 @@ export default {
     left: 50%;
     transform: translateX(-50%);
     flex-direction: row;
-    height: 82px;
-    max-width: 507px;
+    height: 60px;
+    max-width: 360px;
+    min-width: 300px;
     width: 100%;
     align-items: center;
     justify-content: center;
+    .logo {
+      img {
+        width: 60px;
+      }
+    }
     a {
-      padding: 0 20px;
+      padding: 0 15px;
+      img {
+        width: 20px;
+        height: 20px;
+      }
       &:first-child {
         padding: 0 20px 0 55px;
+      }
+    }
+  }
+}
+
+@media (max-width: 395px) {
+  .nav {
+    width: calc(100% - 30px);
+    max-width: 100%;
+    min-width: unset;
+    height: 50px;
+    bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 5px;
+    .logo {
+      width: 50px;
+      height: 50px;
+      background: url("@/assets/images/star.svg") no-repeat center #ea544a;
+      background-size: 50%;
+      border-radius: 10px;
+      img {
+        display: none;
+      }
+    }
+    a {
+      padding: 0 10px;
+      img {
+        width: 19px;
+        height: 19px;
       }
     }
   }

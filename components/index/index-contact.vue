@@ -1,56 +1,50 @@
 <template>
   <div class="contact red" id="contact">
+    <div class="container">
+      <app-h2 text="Связаться" />
+      <p class="h3 t-white mt-1">дополнительная информация под разделом связаться</p>
+    </div>
     <div class="container fd-r ai-b jc-b">
       <div class="card">
-        <app-h2 text="Связаться" />
-        <p class="h3 t-white mt-1">
-          дополнительная информация под разделом связаться
-        </p>
         <ul class="info">
-          <li>
-            <a class="p-XL t-white t-b" href="">
-              <img src="@/assets/images/contact/geo.svg" alt="Адрес" />
-              г. Ташкент, Юнусабадский р-н, Малая кольцевая дорога, 26
+          <div class="list">
+            <li>
+              <a class="p-XL t-white t-b" href>
+                <img src="@/assets/images/contact/geo.svg" alt="Адрес" />
+                г. Ташкент, Юнусабадский р-н, Малая кольцевая дорога, 26
+              </a>
+            </li>
+            <li>
+              <a class="p-XL t-white t-b" href="mailto:info@unimedtrade.uz">
+                <img src="@/assets/images/contact/mail.svg" alt="Адрес" />
+                info@unimedtrade.uz
+              </a>
+            </li>
+            <li>
+              <a class="p-XL t-white t-b" href="tel:+998971500955">
+                <img src="@/assets/images/contact/phone.svg" alt="Адрес" />
+                +998 (97) 150-09-55
+              </a>
+            </li>
+          </div>
+          <div class="socials fd-r ai-c">
+            <a href>
+              <img src="@/assets/images/facebook.svg" alt="Facebook" />
             </a>
-          </li>
-          <li>
-            <a class="p-XL t-white t-b" href="mailto:info@unimedtrade.uz">
-              <img src="@/assets/images/contact/mail.svg" alt="Адрес" />
-              info@unimedtrade.uz
+            <a href>
+              <img src="@/assets/images/instagram.svg" alt="Instagram" />
             </a>
-          </li>
-          <li>
-            <a class="p-XL t-white t-b" href="tel:+998971500955">
-              <img src="@/assets/images/contact/phone.svg" alt="Адрес" />
-              +998 (97) 150-09-55
+            <a href>
+              <img src="@/assets/images/telegram.svg" alt="Telegram" />
             </a>
-          </li>
+          </div>
         </ul>
-        <div class="socials fd-r ai-c">
-          <a href=""
-            ><img src="@/assets/images/facebook.svg" alt="Facebook"
-          /></a>
-          <a href=""
-            ><img src="@/assets/images/instagram.svg" alt="Instagram"
-          /></a>
-          <a href=""
-            ><img src="@/assets/images/telegram.svg" alt="Telegram"
-          /></a>
-        </div>
       </div>
-      <form @submit.prevent="" class="white fd-c ai-c">
+      <form @submit.prevent class="white fd-c ai-c">
         <input type="text" placeholder="Ваше имя" class="p-L t-sb" />
-        <input
-          type="email"
-          placeholder="Ваш email (опционально)"
-          class="p-L t-sb"
-        />
+        <input type="email" placeholder="Ваш email (опционально)" class="p-L t-sb" />
         <input type="tel" placeholder="Номер телефона" class="p-L t-sb" />
-        <textarea
-          type="text"
-          placeholder="Сообщение"
-          class="p-L t-sb"
-        ></textarea>
+        <textarea type="text" placeholder="Сообщение" class="p-L t-sb"></textarea>
         <button class="p-L t-sb ta-c t-white">Отправить</button>
       </form>
     </div>
@@ -63,15 +57,15 @@
       ></iframe>
     </div>
     <div class="container credentials fd-r jc-b p-L t-white t-sb">
-      <a href="https://www.instagram.com/an.ildar/"
-        >Developed by <span>an.ildar</span></a
-      >
-      <span class="copyright">
-        © {{ year }} UnimedTrade. Все права защищены
-      </span>
-      <a href="https://www.instagram.com/an.ildar/"
-        >Design: <span>Zednight</span></a
-      >
+      <a href="https://www.instagram.com/an.ildar/">
+        Developed by
+        <span>an.ildar</span>
+      </a>
+      <span class="copyright">© {{ year }} UnimedTrade. Все права защищены</span>
+      <a href="https://www.instagram.com/an.ildar/">
+        Design:
+        <span>Zednight</span>
+      </a>
     </div>
   </div>
 </template>
@@ -95,21 +89,21 @@ export default {
     display: block;
     width: 100%;
     height: 213px;
-    background: url("@/assets/images/contact/after.svg") no-repeat center;
-    background-size: cover;
+    background: url("@/assets/images/contact/after.svg") repeat-x center;
+    // background-size: 100% cover;
     position: absolute;
-    top: -200px;
+    top: -205px;
     left: 0;
   }
   .container {
+    h2 {
+      color: #ffffff;
+    }
+    p {
+      max-width: 519px;
+      width: 100%;
+    }
     .card {
-      h2 {
-        color: #ffffff;
-      }
-      p {
-        max-width: 519px;
-        width: 100%;
-      }
       .info {
         list-style-type: none;
         margin-top: 90px;
@@ -131,13 +125,13 @@ export default {
             }
           }
         }
-      }
-      .socials {
-        margin-top: 160px;
-        a img {
-          width: 25px;
-          height: 25px;
-          margin-right: 20px;
+        .socials {
+          margin-top: 160px;
+          a img {
+            width: 25px;
+            height: 25px;
+            margin-right: 20px;
+          }
         }
       }
     }
@@ -159,7 +153,7 @@ export default {
         height: 100px;
       }
       button {
-        width: calc(100% + 40px);
+        width: calc(100%);
         border: 2px solid #ea544a;
         background: #ea544a;
         border-radius: 15px;
@@ -189,6 +183,103 @@ export default {
         text-decoration: underline;
       }
     }
+  }
+}
+@media (max-width: 1500px) {
+  .contact {
+    padding-bottom: 60px;
+  }
+}
+@media (max-width: 834px) {
+  .contact {
+    .container {
+      form {
+        max-width: 370px !important;
+        width: 100%;
+        padding: 30px 20px;
+        margin-left: 20px;
+        input,
+        textarea {
+          padding: 10px 20px;
+          margin-bottom: 20px;
+          font-size: 14px;
+        }
+        textarea {
+          height: 150px;
+          font-size: 14px;
+        }
+        button {
+          padding: 10px 20px;
+        }
+      }
+      .card {
+        .info {
+          margin-top: 60px;
+          li {
+            margin-top: 40px;
+            max-width: 238px;
+            a {
+              // font-size: 16px;
+              img {
+                width: 35px;
+                height: 35px;
+                margin-right: 23px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width:700px) {
+  .contact {
+    .credentials {
+      flex-direction: column;
+      text-align: center;
+      font-weight: 100;
+      font-size: 14px;
+    }
+  }
+}
+@media (max-width: 520px) {
+  .contact {
+    .container {
+      &:nth-child(2) {
+        flex-direction: column-reverse;
+        align-items: center;
+      }
+      form {
+        margin-top: 50px;
+      }
+      .card {
+        width: 100%;
+
+        .info {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: 50px;
+          .socials {
+            margin-top: 0 !important;
+            display: flex;
+            flex-direction: column;
+            a {
+              margin-top: 30px;
+              img {
+                margin-right: 0;
+              }
+              &:first-child {
+                margin-top: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .map {
+    margin-top: 50px;
   }
 }
 </style>

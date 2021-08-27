@@ -9,10 +9,7 @@
         <div class="card">
           <app-h1 text="Аналитика" sub="Тенденция и прогноз" />
         </div>
-        <img
-          src="@/assets/images/offer/offer-item1.svg"
-          class="offer-item as-c-M"
-        />
+        <img src="@/assets/images/offer/offer-item1.svg" class="offer-item as-c-M" />
       </div>
     </div>
     <div class="screen fd-r ai-c red-offer">
@@ -22,16 +19,9 @@
       </div>
       <div class="container fd-r ai-c jc-b fd-c-M ai-t-M">
         <div class="card">
-          <app-h1
-            text="Маркетинг и стратегия "
-            sub="Формирование маркетинг-стратегии "
-            red
-          />
+          <app-h1 text="Маркетинг и стратегия " sub="Формирование маркетинг-стратегии " red />
         </div>
-        <img
-          src="@/assets/images/offer/offer-item2.svg"
-          class="offer-item as-c-M"
-        />
+        <img src="@/assets/images/offer/offer-item2.svg" class="offer-item as-c-M" />
       </div>
     </div>
     <div class="screen fd-r ai-c">
@@ -43,10 +33,7 @@
         <div class="card">
           <app-h1 text="Гарантированный результат" />
         </div>
-        <img
-          src="@/assets/images/offer/offer-item3.svg"
-          class="offer-item as-c-M"
-        />
+        <img src="@/assets/images/offer/offer-item3.svg" class="offer-item as-c-M" />
       </div>
     </div>
     <div class="screen fd-r ai-c red-offer">
@@ -56,31 +43,23 @@
       </div>
       <div class="container fd-r ai-c jc-b fd-c-M ai-t-M">
         <div class="card">
-          <app-h1
-            text="UNIMED"
-            sub="Лучшие решения для частных клиник"
-            red
-            image
-          />
+          <app-h1 text="UNIMED" sub="Лучшие решения для частных клиник" red image />
           <div class="buttons mt-6 fd-r ai-c">
             <app-anchor text="Подробнее" link="#main" class="mr-3" />
             <btn-secondary text="Смотреть видео" />
           </div>
         </div>
-        <img
-          src="@/assets/images/offer/offer-item4.svg"
-          class="offer-item last-offer as-c-M"
-        />
+        <img src="@/assets/images/offer/offer-item4.svg" class="offer-item last-offer as-c-M" />
         <div class="socials container fd-r ai-c">
-          <a href=""
-            ><img src="@/assets/images/facebook.svg" alt="Facebook"
-          /></a>
-          <a href=""
-            ><img src="@/assets/images/instagram.svg" alt="Instagram"
-          /></a>
-          <a href=""
-            ><img src="@/assets/images/telegram.svg" alt="Telegram"
-          /></a>
+          <a href>
+            <img src="@/assets/images/facebook.svg" alt="Facebook" />
+          </a>
+          <a href>
+            <img src="@/assets/images/instagram.svg" alt="Instagram" />
+          </a>
+          <a href>
+            <img src="@/assets/images/telegram.svg" alt="Telegram" />
+          </a>
         </div>
       </div>
     </div>
@@ -145,10 +124,10 @@
     }
   }
   .langs {
-   position: absolute;
-   top: 30px;
-   left: 50%;
-   transform: translateX(-50%);
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
     background: transparent;
     span {
       cursor: pointer;
@@ -193,6 +172,21 @@
   .offer-item {
     margin-top: 50px;
     max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .offer {
+    .last-offer {
+      max-width: 200px !important;
+    }
+  }
+}
+@media (max-width:350px) {
+  .offer {
+    .last-offer {
+      max-width: 150px !important;
+    }
   }
 }
 </style>

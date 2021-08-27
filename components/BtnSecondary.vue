@@ -25,7 +25,13 @@ export default {
   border: 2px solid #ffffff;
   &:hover {
     background: #ffffff;
-    color: #EA544A;
+    color: #ea544a;
+  }
+}
+@media (max-width: 480px) {
+  .button {
+    padding: 10px 20px !important ;
+    font-size: 14px !important;
   }
 }
 </style>

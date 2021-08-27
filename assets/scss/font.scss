@@ -79,6 +79,34 @@
     font-size: 18px;
   }
   .p-XL {
+    font-size: 16px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .h1 {
+    font-size: 35px;
+  }
+  .h1-S {
+    font-size: 22px;
+  }
+  .h2 {
+    font-size: 25px;
+  }
+  .h3 {
     font-size: 20px;
+  }
+  .h2-S {
+    font-size: 18px;
+  }
+  .p-L {
+    font-size: 16px;
+  }
+  .p-XL {
+    font-size: 16px;
+  }
+  .p {
+    font-size: 16px;
   }
 }
