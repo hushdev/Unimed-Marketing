@@ -272,6 +272,7 @@
       .strategy-wrap {
         .cards {
           .card {
+            padding-right: 20px;
             ul li {
               font-size: 16px !important;
             }

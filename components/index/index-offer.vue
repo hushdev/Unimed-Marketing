@@ -1,52 +1,46 @@
+
+
+
 <template>
   <div class="offer fd-c" id="offer">
     <div class="screen fd-r ai-c">
-      <div class="langs container fd-r jc-r white">
-        <span class="t-black h3">Uz</span>
-        <span class="t-red h3 ml-1">Ru</span>
-      </div>
+      <app-langs />
       <div class="container fd-r ai-c jc-b fd-c-M ai-t-M">
         <div class="card">
-          <app-h1 text="Аналитика" sub="Тенденция и прогноз" />
+          <app-h1 :text="$t('offer.title1')" :sub="$t('offer.sub1')" />
         </div>
         <img src="@/assets/images/offer/offer-item1.svg" class="offer-item as-c-M" />
       </div>
     </div>
     <div class="screen fd-r ai-c red-offer">
-      <div class="langs container fd-r jc-r">
-        <span class="t-black h3">Uz</span>
-        <span class="t-red h3 ml-1">Ru</span>
-      </div>
+      <app-langs red />
+
       <div class="container fd-r ai-c jc-b fd-c-M ai-t-M">
         <div class="card">
-          <app-h1 text="Маркетинг и стратегия " sub="Формирование маркетинг-стратегии " red />
+          <app-h1 :text="$t('offer.title2')" :sub="$t('offer.sub2')" red />
         </div>
         <img src="@/assets/images/offer/offer-item2.svg" class="offer-item as-c-M" />
       </div>
     </div>
     <div class="screen fd-r ai-c">
-      <div class="langs container fd-r jc-r">
-        <span class="t-black h3">Uz</span>
-        <span class="t-red h3 ml-1">Ru</span>
-      </div>
+      <app-langs />
+
       <div class="container fd-r ai-c jc-b fd-c-M ai-t-M">
         <div class="card">
-          <app-h1 text="Гарантированный результат" />
+          <app-h1 :text="$t('offer.title3')" />
         </div>
         <img src="@/assets/images/offer/offer-item3.svg" class="offer-item as-c-M" />
       </div>
     </div>
     <div class="screen fd-r ai-c red-offer">
-      <div class="langs container fd-r jc-r">
-        <span class="t-black h3">Uz</span>
-        <span class="t-red h3 ml-1">Ru</span>
-      </div>
+      <app-langs red />
       <div class="container fd-r ai-c jc-b fd-c-M ai-t-M">
         <div class="card">
-          <app-h1 text="UNIMED" sub="Лучшие решения для частных клиник" red image />
+          <app-h1 :text="$t('offer.title4')" red image />
+
           <div class="buttons mt-6 fd-r ai-c">
-            <app-anchor text="Подробнее" link="#main" class="mr-3" />
-            <btn-secondary text="Смотреть видео" />
+            <app-anchor :text="$t('offer.button1')" link="#main" class="mr-3" />
+            <btn-secondary :text="$t('offer.button2')" />
           </div>
         </div>
         <img src="@/assets/images/offer/offer-item4.svg" class="offer-item last-offer as-c-M" />
@@ -65,7 +59,9 @@
     </div>
   </div>
 </template> 
-
+<script>
+export default {};
+</script>
 <style lang="scss" scoped>
 .offer {
   position: sticky;
@@ -73,21 +69,10 @@
   height: 100vh;
   overflow-x: hidden;
   overflow-y: scroll;
-  .red-offer {
-    .langs {
-      span:nth-child(1) {
-        color: #404040;
-      }
-      span:nth-child(2) {
-        color: #ffffff;
-      }
-    }
-  }
   .screen {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    // width: calc(100%);
     min-height: 100vh;
     .card {
       width: 440px;
@@ -121,16 +106,6 @@
     transform: translateX(-50%);
     a {
       margin-right: 15px;
-    }
-  }
-  .langs {
-    position: absolute;
-    top: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: transparent;
-    span {
-      cursor: pointer;
     }
   }
 
@@ -181,7 +156,7 @@
     }
   }
 }
-@media (max-width:350px) {
+@media (max-width: 350px) {
   .offer {
     .last-offer {
       max-width: 150px !important;

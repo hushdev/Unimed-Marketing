@@ -10,7 +10,6 @@
 </template>
 <script>
 import Logo from "@/assets/images/sidebar/logo.png";
-
 //Icons
 import Home from "@/assets/images/sidebar/home.svg";
 import Info from "@/assets/images/sidebar/info.svg";
@@ -18,7 +17,6 @@ import Coin from "@/assets/images/sidebar/coin.svg";
 import Target from "@/assets/images/sidebar/target.svg";
 import Question from "@/assets/images/sidebar/question.svg";
 import Phone from "@/assets/images/sidebar/phone.svg";
-
 export default {
   data: () => ({
     Logo,
@@ -58,7 +56,6 @@ export default {
     }
   }
 }
-
 @media (max-width: 1640px) {
   .nav {
     left: 15px;
@@ -101,7 +98,6 @@ export default {
     }
   }
 }
-
 @media (max-width: 395px) {
   .nav {
     width: calc(100% - 30px);
@@ -112,9 +108,10 @@ export default {
     display: flex;
     justify-content: space-between;
     padding-right: 5px;
+    overflow-x: scroll;
     .logo {
-      width: 50px;
-      height: 50px;
+      min-width: 50px;
+      min-height: 50px;
       background: url("@/assets/images/star.svg") no-repeat center #ea544a;
       background-size: 50%;
       border-radius: 10px;

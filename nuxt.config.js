@@ -44,11 +44,52 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/i18n',
-    'nuxt-lazy-load'
+    ['nuxt-lazy-load', {
+      // These are the default values
+      images: false,
+      videos: true,
+      audios: true,
+      iframes: true,
+      native: false,
+      polyfill: true,
+      directiveOnly: false,
+
+      // To remove class set value to false
+      loadingClass: 'isLoading',
+      loadedClass: 'isLoaded',
+      appendClass: 'lazyLoad',
+
+    }]
   ],
 
-  i18n: {},
-  
+  i18n: {
+    lazy: true,
+    langDir: 'lang',
+    locales: [
+      {
+        code: 'ru',
+        iso: 'RU',
+        file: 'ru-RU.js'
+      },
+      {
+        code: 'uz',
+        iso: 'UZ',
+        file: 'uz-UZ.js'
+      },
+      {
+        code: 'en',
+        iso: 'EN',
+        file: 'en-US.js'
+      }
+    ],
+    defaultLocale: 'ru',
+    // messages: {
+    //   "ru": () => import('~/lang/ru-RU.js'),
+    //   "uz": () => import('~/lang/uz-UZ.js'),
+    //   "en": () => import('~/lang/en-US.js'),
+    // }
+  },
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     babel: {

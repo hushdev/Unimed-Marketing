@@ -20,14 +20,12 @@ export default {
 
 <style lang="scss">
 .app {
-  // overflow-x: hidden;
   .screen {
     position: static;
     top: 0;
     left: 0;
     right: 0;
     z-index: 5;
-    // width: 100%;
     background: #ffffff;
   }
 }

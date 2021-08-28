@@ -90,10 +90,12 @@ export default {
           .decor {
             width: 60px;
             height: 60px;
+            background: #ea544a;
           }
           button {
             background: transparent;
             transition: 0.4s;
+            margin-left: 10px;
           }
           .rotate {
             transform: rotate(180deg);
@@ -111,7 +113,31 @@ export default {
   .faq {
     .container {
       .faq-wrap {
-        margin-top: 25px;
+        margin-top: 25px; 
+        .item {
+          margin-bottom: 25px;
+          .question {
+            padding: 0 15px 0 0 !important;
+            div {
+              font-size: 14px !important;
+            }
+             .decor {
+              width: 45px;
+              height: 45px;
+            }
+            button {
+              background: transparent;
+              transition: 0.4s;
+              img {
+                max-width: 15px;
+              }
+            }
+          }
+          .answer {
+            padding: 26px 32px;
+            font-size: 14px !important;
+          }
+        }
       }
     }
   }

@@ -28,7 +28,7 @@
           :class="{'card-red': item === target}"
           class="card shadow white"
         >
-          <h3 class="h3 t-b t-red">{{ item.name }}</h3>
+          <h3 class="p-XL t-b t-red">{{ item.name }}</h3>
           <p
             class="p-L t-b t-gray-light mt-3"
           >{{ item.text ? item.text.substring(0, 52) + ".." : "" }}</p>
@@ -121,11 +121,7 @@ export default {
         padding: 15px 7.5px;
         margin-right: 25px;
         transition: 0.2s;
-      }
-      .active {
         position: relative;
-        color: #ea544a;
-
         &:after {
           content: "";
           bottom: -1px;
@@ -134,8 +130,19 @@ export default {
           width: 100%;
           height: 4px;
           border-radius: 4px;
-          background: #ea544a;
           z-index: 10;
+          transition: 0.2s;
+        }
+      }
+      .active {
+        position: relative;
+        color: #ea544a;
+        transition: 0.2s;
+
+        &:after {
+          content: "";
+          transition: 0.2s;
+          background: #ea544a;
         }
       }
     }
@@ -147,6 +154,9 @@ export default {
         border-radius: 20px;
         padding: 32px 38px;
         margin: 20px;
+        h3 {
+          word-break: break-all;
+        }
         &:hover {
           background: #ea544a;
           * {
@@ -218,6 +228,7 @@ export default {
           width: unset;
           h3 {
             font-size: 14px;
+            word-break: normal !important;
           }
           p {
             display: none;

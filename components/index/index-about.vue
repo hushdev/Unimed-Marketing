@@ -1,41 +1,21 @@
 <template>
   <div class="about fd-c jc-c" id="about">
     <div class="container fd-r ai-c">
-      <img
-        src="@/assets/images/about/item.svg"
-        alt="Информация о нас"
-        class="about-item"
-      />
+      <img src="@/assets/images/about/item.svg" alt="Информация о нас" class="about-item" />
       <div class="card fd-c">
         <h2 class="h2-S t-black fd-c">
-          <span class="h3 t-red mb-1">О нас</span>
-          Мы точно знаем какая информация необходима для вашей целевой аудитории
+          <span class="h3 t-red mb-1">{{$t('about.underTitle')}}</span>
+          {{$t('about.title')}}
         </h2>
-        <p class="t-gray p my-4">
-          Компания Unimed Group была основана специалистами в области
-          интернет-маркетинга и медицины с опытом активного продвижения более 5
-          лет. С момента основания до сегодняшнего дня команда выросла до 15
-          высокопрофессиональных специалистов, обладающих всеми необходимыми
-          компетенциями для реализации эффективного продвижения клиник.
-        </p>
+        <p class="t-gray p my-4">{{$t('about.p')}}</p>
         <div class="info fd-r red">
-          <div class="info-item t-white p-S t-b">Новые эффективные методы</div>
-          <div class="info-item t-white p-S t-b">Только комплексный подход</div>
-          <div class="info-item t-white p-S t-b">
-            Ориентированность на множество показателей
-          </div>
+          <div class="info-item t-white p-S t-b">{{$t('about.item1')}}</div>
+          <div class="info-item t-white p-S t-b">{{$t('about.item2')}}</div>
+          <div class="info-item t-white p-S t-b">{{$t('about.item3')}}</div>
         </div>
-        <a
-          href="#services"
-          v-smooth-scroll
-          class="more p-L t-red mt-5 as-r fd-r ai-c t-b"
-        >
-          Подробнее
-          <img
-            src="@/assets/images/about/arrow.svg"
-            alt="Подробнее"
-            class="ml-1"
-          />
+        <a href="#services" v-smooth-scroll class="more p-L t-red mt-5 as-r fd-r ai-c t-b">
+          {{$t('about.button')}}
+          <img src="@/assets/images/about/arrow.svg" alt="Подробнее" class="ml-1" />
         </a>
       </div>
     </div>
@@ -72,6 +52,8 @@
           max-width: 221px;
           min-width: 100px;
           width: auto;
+          display: flex;
+          align-items: center;
           &:nth-child(2) {
             border-left: 1px solid rgba(255, 255, 255, 0.28);
             border-right: 1px solid rgba(255, 255, 255, 0.28);
@@ -114,7 +96,7 @@
 
 @media (max-width: 834px) {
   .about {
-  background-position: bottom left;
+    background-position: bottom left;
 
     .container {
       flex-direction: column-reverse;
@@ -125,7 +107,7 @@
         margin: 0 0 34px 0;
         .info {
           display: flex;
-          justify-content: space-between  ;
+          justify-content: space-between;
           .info-item {
             font-size: 14px;
             text-align: center;
@@ -139,6 +121,34 @@
 @media (max-width: 480px) {
   .about {
     padding: 40px 0;
+    .container {
+      .card {
+        .info {
+          // display: flex;
+          // flex-direction: column;
+          // align-items: center;
+          .info-item {
+            min-width: unset;
+            font-size: 12px;
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  .about {
+    .container {
+      .card {
+        .info {
+          .info-item {
+            font-size: 10px;
+          }
+        }
+      }
+    }
   }
 }
 </style>
