@@ -31,7 +31,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: '~/plugins/vue-smooth-scroll', ssr: false }
+    { src: '~/plugins/vue-smooth-scroll', ssr: false },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -44,6 +44,7 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/i18n',
+    'nuxt-lazy-load'
   ],
 
   i18n: {},

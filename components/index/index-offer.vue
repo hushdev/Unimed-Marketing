@@ -139,7 +139,6 @@
     min-width: 100px;
     width: 100% !important;
     height: auto !important;
-    transition: 0.5s ease-in-out;
     &:hover {
       transform: scale(0.95);
     }

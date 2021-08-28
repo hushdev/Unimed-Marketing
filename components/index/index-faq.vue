@@ -2,32 +2,19 @@
   <div class="faq" id="faq">
     <div class="container">
       <app-h2 text="Часто задаваемые вопросы" />
-      <p class="h3 t-gray">
-        Вспомогательный текст под часто задаваемыми вопросами
-      </p>
+      <p class="h3 t-gray">Вспомогательный текст под часто задаваемыми вопросами</p>
       <div class="faq-wrap">
         <div v-for="(item, idx) in faq" :key="idx" class="item">
-          <div class="question fd-r jc-b p-L t-black t-b">
-            <div class="fd-r ai-c">
-              <img
-                src="@/assets/images/faq/question.svg"
-                alt="?"
-                class="decor mr-2"
-              />
+          <div class="question fd-r jc-b">
+            <div class="fd-r ai-c p-L t-black t-b">
+              <img src="@/assets/images/faq/question.svg" alt="?" class="decor mr-2" />
               {{ item.name }}
             </div>
-            <button @click="item.active = !item.active">
-              <img
-                src="@/assets/images/faq/arrow.svg"
-                alt="Развернуть/Свернуть ответ"
-              />
+            <button @click="item.active = !item.active" :class="{rotate: item.active}">
+              <img src="@/assets/images/faq/arrow.svg" alt="Развернуть/Свернуть ответ" />
             </button>
           </div>
-          <transition>
-            <div v-show="item.active" ref="answer" class="answer p-L t-gray">
-              {{ item.text }}
-            </div>
-          </transition>
+          <div v-show="item.active" ref="answer" class="answer p-L t-gray">{{ item.text }}</div>
         </div>
       </div>
     </div>
@@ -70,13 +57,16 @@ export default {
 
 <style lang="scss" scoped>
 .faq {
-  background: url("@/assets/images/faq/bg.svg") no-repeat right center;
+  background: url("@/assets/images/faq/bg.svg") no-repeat right top;
   background-size: contain;
   width: 100%;
   .container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    h2 {
+      text-align: center;
+    }
     p {
       max-width: 519px;
       width: 100%;
@@ -104,14 +94,24 @@ export default {
           button {
             background: transparent;
             transition: 0.4s;
-            &:hover {
-              transform: rotate(360deg);
-            }
+          }
+          .rotate {
+            transform: rotate(180deg);
           }
         }
         .answer {
           padding: 26px 32px;
         }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .faq {
+    .container {
+      .faq-wrap {
+        margin-top: 25px;
       }
     }
   }

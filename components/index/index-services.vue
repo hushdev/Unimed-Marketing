@@ -7,23 +7,17 @@
           class="h3 t-gray-light"
           :class="{ active: target.category == 'marketing' }"
           @click="target.category = 'marketing'"
-        >
-          Маркетинг
-        </button>
+        >Маркетинг</button>
         <button
           class="h3 t-gray-light"
           :class="{ active: target.category == 'business' }"
           @click="target.category = 'business'"
-        >
-          Бизнес-аналитика
-        </button>
+        >Бизнес-аналитика</button>
         <button
           class="h3 t-gray-light"
           :class="{ active: target.category == 'service' }"
           @click="target.category = 'service'"
-        >
-          Сервис
-        </button>
+        >Сервис</button>
       </div>
       <div class="row fd-r jc-c ai-s fw-w">
         <div
@@ -35,9 +29,9 @@
           class="card shadow white"
         >
           <h3 class="h3 t-b t-red">{{ item.name }}</h3>
-          <p class="p-L t-b t-gray-light mt-3">
-            {{ item.text ? item.text.substring(0, 52) + ".." : "" }}
-          </p>
+          <p
+            class="p-L t-b t-gray-light mt-3"
+          >{{ item.text ? item.text.substring(0, 52) + ".." : "" }}</p>
         </div>
       </div>
       <div class="info fd-r ai-b jc-b">
@@ -87,11 +81,11 @@ export default {
   }),
   methods: {
     setTarget(item) {
-     this.target = item
+      this.target = item;
     },
   },
   created() {
-    this.target = this.items[0]
+    this.target = this.items[0];
   },
 };
 </script>
@@ -194,6 +188,40 @@ export default {
         a {
           align-self: center;
           margin-top: 30px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .services {
+    padding: 0 0 40px 0;
+    .container {
+      .toggler {
+        margin-top: 25px;
+        button {
+          font-size: 14px;
+          padding: 10px 5px;
+          margin-right: 10px;
+        }
+      }
+      .row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        margin-top: 25px;
+        .card {
+          padding: 10px 30px;
+          margin: 5px;
+          width: unset;
+          h3 {
+            font-size: 14px;
+          }
+          p {
+            display: none;
+          }
         }
       }
     }

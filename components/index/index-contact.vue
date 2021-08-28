@@ -50,6 +50,7 @@
     </div>
     <div class="container map">
       <iframe
+        v-lazy-load
         src="https://yandex.ru/map-widget/v1/?um=constructor%3A12d7b74f622bf778838e54df31a9fe3829e6da5b592a29d1590bcf4505e53e66&amp;source=constructor"
         width="100%"
         height="420"
@@ -232,8 +233,14 @@ export default {
     }
   }
 }
-@media (max-width:700px) {
+@media (max-width: 700px) {
   .contact {
+    margin-top: 80px;
+    &::before {
+      height: 76px;
+      top: -75px;
+      background-size: cover;
+    }
     .credentials {
       flex-direction: column;
       text-align: center;
@@ -251,6 +258,7 @@ export default {
       }
       form {
         margin-top: 50px;
+        margin-left: 0;
       }
       .card {
         width: 100%;

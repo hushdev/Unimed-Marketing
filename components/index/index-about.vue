@@ -57,8 +57,6 @@
       max-width: 548px;
       min-width: 200px;
       width: 100%;
-
-      transition: 0.5s ease-in-out;
       &:hover {
         transform: scale(0.95);
       }
@@ -135,6 +133,12 @@
         }
       }
     }
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: 40px 0;
   }
 }
 </style>

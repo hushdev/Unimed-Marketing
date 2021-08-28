@@ -149,6 +149,9 @@
           min-width: 100px;
           width: 100%;
           height: auto;
+          &:hover {
+            transform: scale(.95);
+          }
         }
       }
     }
@@ -255,6 +258,23 @@
             max-width: 350px;
             align-self: center;
             margin-top: 40px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .strategy {
+    padding: 0 0 40px 0;
+    .container {
+      .strategy-wrap {
+        .cards {
+          .card {
+            ul li {
+              font-size: 16px !important;
+            }
           }
         }
       }
