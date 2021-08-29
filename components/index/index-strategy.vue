@@ -2,41 +2,16 @@
   <div class="strategy" id="strategy">
     <div class="container">
       <div class="heading">
-        <app-h2 text="Стратегия развития" />
-        <p class="p t-black mt-4">
-          До открытия клиники или нового филиала сети медцентров проводятся
-          исследования по выяснению спроса на услуги медцентра, определение
-          профиля услуг, позиционирования будущей клиники. Важно определить
-          реальных конкурентов в той локации, где планируется открытие клиники и
-          составить оптимальный список специальностей врачей Полученные данные
-          используются в бизнес-плане и позволяют планировать выручку будущего
-          медицинского центра.
-        </p>
+        <app-h2 :text="$t('strategy.title')" />
+        <p class="p t-black mt-4">{{$t('strategy.subTitle')}}</p>
       </div>
       <div class="strategy-wrap mt-5">
         <div class="row fd-r ai-c">
           <div class="cards">
-            <div class="card">
-              <h3 class="h3 t-red">Разработка предложения по сегментации услуг клиники</h3>
+            <div v-for="(item, idx) in items" :key="idx" class="card">
+              <h3 class="h3 t-red">{{item.title}}</h3>
               <ul class="t-black">
-                <li class="p-XL">Анализ рынка медицинских услуг</li>
-                <li class="p-XL">Прогноз и динамика</li>
-                <li class="p-XL">Доли различных сегментов</li>
-                <li class="p-XL">Динамика по сегменту</li>
-                <li class="p-XL">Экспертное мнение по выбранным</li>
-                <li class="p-XL">сегментам (привлечение специалистов по Public Health)</li>
-              </ul>
-            </div>
-            <div class="card">
-              <h3 class="h3 t-red">Разработка предложения по сегментации услуг клиники</h3>
-              <ul class="t-black">
-                <li class="p-XL">Работники общественного питания, торговли</li>
-                <li class="p-XL">Сотрудники строительных, нефтяных компаний</li>
-                <li class="p-XL">Спортсмены и спортивные учреждения Динамика по сегменту</li>
-                <li class="p-XL">
-                  Сотрудники торговых и дипломатических миссий в Республики
-                  Узбекистан
-                </li>
+                <li v-for="(li, idx) in item.ul" :key="idx" class="p-XL">{{li}}</li>
               </ul>
             </div>
           </div>
@@ -46,28 +21,12 @@
           <img src="@/assets/images/strategy/item2.svg" alt="Стратегия" />
 
           <div class="cards">
-            <div class="card">
-              <h3 class="h3 t-red">Сервис менеджмент</h3>
+            <div v-for="(item, idx) in items2" :key="idx" class="card">
+              <h3 class="h3 t-red">{{item.title}}</h3>
               <ul class="t-black">
-                <li class="p-XL">
-                  Выявление потребностей в тренинге медицинских представителей и
-                  торговых агентов
+                <li v-for="(li, idx) in item.ul" :key="idx" class="p-XL">
+                  {{li}}
                 </li>
-                <li class="p-XL">
-                  Разработка ключевых преимуществ клиники с учетом местного
-                  рынка здравоохранения
-                </li>
-              </ul>
-            </div>
-            <div class="card">
-              <h3 class="h3 t-red">Маркетинг</h3>
-              <ul class="t-black">
-                <li class="p-XL">Разработка акций</li>
-                <li class="p-XL">Digital Marketing</li>
-                <li class="p-XL">Многоязычный сайт (узб, рус, тадж, афг.)</li>
-                <li class="p-XL">Запуск -Call - центра</li>
-                <li class="p-XL">Повышение лояльности к клинике в целом (PR компания)</li>
-                <li class="p-XL">Рекламная кампания в соседних республиках</li>
               </ul>
             </div>
           </div>
@@ -76,6 +35,19 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  computed: {
+    items() {
+      return this.$t("strategy.items");
+    },
+    items2() {
+      return this.$t("strategy.items2");
+    },
+  },
+};
+</script>
 
 
 <style lang="scss" scoped>
@@ -150,7 +122,7 @@
           width: 100%;
           height: auto;
           &:hover {
-            transform: scale(.95);
+            transform: scale(0.95);
           }
         }
       }

@@ -1,20 +1,19 @@
 <template>
-  <div class="faq" id="faq">
+  <div class="faq bg-anim-sm" id="faq">
     <div class="container">
-      <app-h2 text="Часто задаваемые вопросы" />
-      <p class="h3 t-gray">Вспомогательный текст под часто задаваемыми вопросами</p>
+      <app-h2 :text="$t('faq.title')" />
       <div class="faq-wrap">
         <div v-for="(item, idx) in faq" :key="idx" class="item">
           <div class="question fd-r jc-b">
             <div class="fd-r ai-c p-L t-black t-b">
-              <img src="@/assets/images/faq/question.svg" alt="?" class="decor mr-2" />
-              {{ item.name }}
+              <span class="decor mr-2">?</span>
+              <span class="question-text">{{ item.question }}</span>
             </div>
             <button @click="item.active = !item.active" :class="{rotate: item.active}">
               <img src="@/assets/images/faq/arrow.svg" alt="Развернуть/Свернуть ответ" />
             </button>
           </div>
-          <div v-show="item.active" ref="answer" class="answer p-L t-gray">{{ item.text }}</div>
+          <div v-show="item.active" ref="answer" class="answer p-L t-gray">{{ item.answer }}</div>
         </div>
       </div>
     </div>
@@ -23,34 +22,15 @@
 
 <script>
 export default {
+  created() {
+    this.faq = this.$t("faq.items");
+    this.faq.forEach((element) => {
+      element.active = false;
+    });
+    this.faq[0].active = true;
+  },
   data: () => ({
-    faq: [
-      {
-        name: "Non consectetur a erat nam at lectus urna duis?",
-        text: "Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.",
-        active: true,
-      },
-      {
-        name: "Non consectetur a erat nam at lectus urna duis?",
-        text: "Non consectetur a erat nam at lectus urna duis?",
-        active: false,
-      },
-      {
-        name: "Non consectetur a erat nam at lectus urna duis?",
-        text: "Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.",
-        active: false,
-      },
-      {
-        name: "Non consectetur a erat nam at lectus urna duis?",
-        text: "Non consectetur a erat nam at lectus urna duis?",
-        active: false,
-      },
-      {
-        name: "Non consectetur a erat nam at lectus urna duis?",
-        text: "Non consectetur a erat nam at lectus urna duis?",
-        active: false,
-      },
-    ],
+    faq: null,
   }),
 };
 </script>
@@ -58,7 +38,7 @@ export default {
 <style lang="scss" scoped>
 .faq {
   background: url("@/assets/images/faq/bg.svg") no-repeat right top;
-  background-size: contain;
+  // background-size: contain;  
   width: 100%;
   .container {
     display: flex;
@@ -82,15 +62,26 @@ export default {
         margin-bottom: 30px;
         background: #ffffff;
         box-shadow: 0 4px 19px rgba(188, 188, 188, 0.28);
+        overflow: hidden;
+
         .question {
           padding: 0 20px 0 0 !important;
           border-radius: 10px;
-          overflow: hidden;
           border: 1px solid #ea544a;
+          .question-text {
+            padding: 10px 0;
+          }
           .decor {
-            width: 60px;
-            height: 60px;
+            min-width: 60px;
+            min-height: 60px;
+            height: 101%;
             background: #ea544a;
+            border-bottom-left-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 40px;
           }
           button {
             background: transparent;
@@ -113,17 +104,16 @@ export default {
   .faq {
     .container {
       .faq-wrap {
-        margin-top: 25px; 
+        margin-top: 25px;
         .item {
           margin-bottom: 25px;
           .question {
-            padding: 0 15px 0 0 !important;
+            padding: 0 15px 0 15px !important;
             div {
               font-size: 14px !important;
             }
-             .decor {
-              width: 45px;
-              height: 45px;
+            .decor {
+              display: none;
             }
             button {
               background: transparent;

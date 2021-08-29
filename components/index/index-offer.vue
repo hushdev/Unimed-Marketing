@@ -3,7 +3,7 @@
 
 <template>
   <div class="offer fd-c" id="offer">
-    <div class="screen fd-r ai-c">
+    <div class="screen fd-r ai-c bg-anim">
       <app-langs />
       <div class="container fd-r ai-c jc-b fd-c-M ai-t-M">
         <div class="card">
@@ -12,7 +12,7 @@
         <img src="@/assets/images/offer/offer-item1.svg" class="offer-item as-c-M" />
       </div>
     </div>
-    <div class="screen fd-r ai-c red-offer">
+    <div class="screen fd-r ai-c red-offer bg-anim">
       <app-langs red />
 
       <div class="container fd-r ai-c jc-b fd-c-M ai-t-M">
@@ -22,7 +22,7 @@
         <img src="@/assets/images/offer/offer-item2.svg" class="offer-item as-c-M" />
       </div>
     </div>
-    <div class="screen fd-r ai-c">
+    <div class="screen fd-r ai-c bg-anim">
       <app-langs />
 
       <div class="container fd-r ai-c jc-b fd-c-M ai-t-M">
@@ -32,7 +32,7 @@
         <img src="@/assets/images/offer/offer-item3.svg" class="offer-item as-c-M" />
       </div>
     </div>
-    <div class="screen fd-r ai-c red-offer">
+    <div class="screen fd-r ai-c red-offer bg-anim">
       <app-langs red />
       <div class="container fd-r ai-c jc-b fd-c-M ai-t-M">
         <div class="card">
@@ -40,7 +40,7 @@
 
           <div class="buttons mt-6 fd-r ai-c">
             <app-anchor :text="$t('offer.button1')" link="#main" class="mr-3" />
-            <btn-secondary :text="$t('offer.button2')" />
+            <!-- <btn-secondary :text="$t('offer.button2')" /> -->
           </div>
         </div>
         <img src="@/assets/images/offer/offer-item4.svg" class="offer-item last-offer as-c-M" />
@@ -80,22 +80,22 @@ export default {};
     &:nth-child(1) {
       z-index: 1;
       background: url("@/assets/images/offer/bg1.svg") no-repeat top;
-      background-size: contain 100%;
+      // background-size: contain 100%;
     }
     &:nth-child(2) {
       z-index: 2;
       background: url("@/assets/images/offer/bg2.svg") no-repeat center #ea544a;
-      background-size: cover !important;
+      // background-size: cover !important;
     }
     &:nth-child(3) {
       z-index: 3;
       background: url("@/assets/images/offer/bg3.svg") no-repeat center #ffffff;
-      background-size: cover !important;
+      // background-size: cover !important;
     }
     &:nth-child(4) {
       z-index: 4;
       background: url("@/assets/images/offer/bg2.svg") no-repeat center #ea544a;
-      background-size: cover !important;
+      // background-size: cover !important;
     }
   }
   .socials {
@@ -126,12 +126,6 @@ export default {};
 @media (max-width: 834px) {
   .offer {
     .screen {
-      &:nth-child(1),
-      &:nth-child(2),
-      &:nth-child(3),
-      &:nth-child(4) {
-        background-size: contain !important;
-      }
       .card {
         width: 100%;
       }

@@ -32,6 +32,8 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: '~/plugins/vue-smooth-scroll', ssr: false },
+    { src: '~/plugins/vuelidate', },
+    {src: '~/plugins/axios'}
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -43,6 +45,7 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/axios',
     '@nuxtjs/i18n',
     ['nuxt-lazy-load', {
       // These are the default values

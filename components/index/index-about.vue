@@ -1,5 +1,5 @@
 <template>
-  <div class="about fd-c jc-c" id="about">
+  <div class="about fd-c jc-c  bg-anim" id="about">
     <div class="container fd-r ai-c">
       <img src="@/assets/images/about/item.svg" alt="Информация о нас" class="about-item" />
       <div class="card fd-c">

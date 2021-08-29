@@ -1,38 +1,70 @@
 <template>
-  <div class="services" id="services">
+  <div class="services bg-anim" id="services">
     <div class="container fd-c ai-c ta-c">
-      <app-h2 text="Наши услуги" />
+      <app-h2 :text="$t('services.title')" />
       <div class="toggler mt-5">
         <button
           class="h3 t-gray-light"
           :class="{ active: target.category == 'marketing' }"
-          @click="target.category = 'marketing'"
-        >Маркетинг</button>
+          @click="target.category = 'marketing'; setPreview()"
+        >{{$t('services.marketing.category')}}</button>
         <button
           class="h3 t-gray-light"
           :class="{ active: target.category == 'business' }"
-          @click="target.category = 'business'"
-        >Бизнес-аналитика</button>
+          @click="target.category = 'business'; setPreview()"
+        >{{$t('services.business.category')}}</button>
         <button
           class="h3 t-gray-light"
           :class="{ active: target.category == 'service' }"
-          @click="target.category = 'service'"
-        >Сервис</button>
+          @click="target.category = 'service'; setPreview()"
+        >{{$t('services.service.category')}}</button>
       </div>
       <div class="row fd-r jc-c ai-s fw-w">
-        <div
-          v-for="(item, idx) in items"
-          :key="idx"
-          v-show="item.category === target.category"
-          @click="setTarget(item)"
-          :class="{'card-red': item === target}"
-          class="card shadow white"
-        >
-          <h3 class="p-XL t-b t-red">{{ item.name }}</h3>
-          <p
-            class="p-L t-b t-gray-light mt-3"
-          >{{ item.text ? item.text.substring(0, 52) + ".." : "" }}</p>
-        </div>
+        <template v-if="target.category == 'marketing'">
+          <div
+            v-for="(item, idx) in marketing"
+            :key="idx"
+            @click="setTarget(item)"
+            :class="{'card-red': item.name === target.name}"
+            class="card shadow white"
+          >
+            <h3 class="p-XL t-b t-red">{{ item.name }}</h3>
+            <p
+              class="p-L t-b t-gray-light mt-3"
+              v-html="item.text ? item.text.substring(0, 52) + '..' : ''"
+            ></p>
+          </div>
+        </template>
+        <template v-if="target.category == 'business'">
+          <div
+            v-for="(item, idx) in business"
+            :key="idx"
+            @click="setTarget(item)"
+            :class="{'card-red': item.name === target.name}"
+            class="card shadow white"
+          >
+            <h3 class="p-XL t-b t-red">{{ item.name }}</h3>
+            <p
+              class="p-L t-b t-gray-light mt-3"
+              v-html="item.text ? item.text.substring(0, 52) + '..' : ''"
+            ></p>
+          </div>
+        </template>
+        <template v-if="target.category == 'service'">
+          <div
+            v-for="(item, idx) in service"
+            :key="idx"
+            @click="setTarget(item)"
+            :class="{'card-red': item.name === target.name}"
+            class="card shadow white"
+          >
+            <h3 class="p-XL t-b t-red">{{ item.name }}</h3>
+            <p
+              class="p-L t-b t-gray-light mt-3"
+              v-html="item.text ? item.text.substring(0, 52) + '..' : ''"
+            ></p>
+          </div>
+        </template>
       </div>
       <div class="info fd-r ai-b jc-b">
         <div class="card">
@@ -47,45 +79,47 @@
 
 <script>
 export default {
+  computed: {
+    marketing() {
+      return this.$t("services.marketing.items");
+    },
+    business() {
+      return this.$t("services.business.items");
+    },
+    service() {
+      return this.$t("services.service.items");
+    },
+  },
   data: () => ({
     target: {
       category: "business",
       name: null,
       text: null,
     },
-    items: [
-      //business
-      {
-        name: "Исследование до открытия",
-        text: "До открытия клиники или нового филиала сети медцентров проводятся исследования по выяснению спроса на услуги медцентра, определение профиля услуг, позиционирования будущей клиники. Важно определить реальных конкурентов в той локации, где планируется открытие клиники и составить оптимальный список специальностей врачей Полученные данные используются в бизнес-плане и позволяют планировать выручку будущего медицинского центра.",
-        category: "business",
-      },
-      {
-        name: "Оценка конкурентоспособности",
-        text: "Цели и задачи: исследование конкурентной среды в зоне охвата клиники. <br/>- Оценка доли коммерческих медицинских центров в разрезе с потоком пациентов.<br/>- Сопоставления рекламной активности медицинских центров в зоне охвата.<br/>- Глубокий анализ. В случае, когда есть необходимость изучить один из направлений, возможно изучение потока пациентов в рамках данной специализации. <br/>- Выяснение уровня осведомленности о клинике позволяет оценить результат рекламной активности и сравнить этот показатель клиники с конкурентами.",
-        category: "business",
-      },
-      {
-        name: "",
-      },
-      //marketing
-      { name: "Сайт", text: "брендинг", category: "marketing" },
-      { name: "Брендбук", text: "брендинг", category: "marketing" },
-      { name: "Брендинг", text: "брендинг", category: "marketing" },
-      { name: "SEO", text: "брендинг", category: "marketing" },
-      { name: "SMM", text: "брендинг", category: "marketing" },
-      { name: "Копирайтинг", text: "брендинг", category: "marketing" },
-      { name: "Фото - видео съемки", text: "брендинг", category: "marketing" },
-      { name: "Ребрендинг", text: "брендинг", category: "marketing" },
-    ],
   }),
+
   methods: {
     setTarget(item) {
-      this.target = item;
+      this.target.name = item.name;
+      this.target.text = item.text;
+    },
+    setPreview() {
+      if (this.target.category === "business") {
+        this.target.name = this.business[0].name;
+        this.target.text = this.business[0].text;
+      }
+      if (this.target.category === "marketing") {
+        this.target.name = this.marketing[0].name;
+        this.target.text = this.marketing[0].text;
+      }
+      if (this.target.category === "service") {
+        this.target.name = this.service[0].name;
+        this.target.text = this.service[0].text;
+      }
     },
   },
   created() {
-    this.target = this.items[0];
+    this.setPreview();
   },
 };
 </script>

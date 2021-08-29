@@ -1,8 +1,7 @@
 <template>
-  <div class="contact red" id="contact">
+  <div class="contact red bg-anim-sm" id="contact">
     <div class="container">
-      <app-h2 text="Связаться" />
-      <p class="h3 t-white mt-1">дополнительная информация под разделом связаться</p>
+      <app-h2 :text="$t('contact.title')" />
     </div>
     <div class="container fd-r ai-b jc-b">
       <div class="card">
@@ -11,7 +10,7 @@
             <li>
               <a class="p-XL t-white t-b" href>
                 <img src="@/assets/images/contact/geo.svg" alt="Адрес" />
-                г. Ташкент, Юнусабадский р-н, Малая кольцевая дорога, 26
+                {{$t('contact.adress')}}
               </a>
             </li>
             <li>
@@ -21,9 +20,9 @@
               </a>
             </li>
             <li>
-              <a class="p-XL t-white t-b" href="tel:+998971500955">
+              <a class="p-XL t-white t-b" href="tel:+998712004404">
                 <img src="@/assets/images/contact/phone.svg" alt="Адрес" />
-                +998 (97) 150-09-55
+                {{$t('contact.phone')}}
               </a>
             </li>
           </div>
@@ -40,12 +39,32 @@
           </div>
         </ul>
       </div>
-      <form @submit.prevent class="white fd-c ai-c">
-        <input type="text" placeholder="Ваше имя" class="p-L t-sb" />
-        <input type="email" placeholder="Ваш email (опционально)" class="p-L t-sb" />
-        <input type="tel" placeholder="Номер телефона" class="p-L t-sb" />
-        <textarea type="text" placeholder="Сообщение" class="p-L t-sb"></textarea>
-        <button class="p-L t-sb ta-c t-white">Отправить</button>
+      <form @submit.prevent="submit" class="white fd-c ai-c">
+        <input
+          v-model="form.name"
+          type="text"
+          :placeholder="$t('contact.form.name')"
+          class="p-L t-sb"
+        />
+        <input
+          v-model="form.mail"
+          type="email"
+          :placeholder="$t('contact.form.mail')"
+          class="p-L t-sb"
+        />
+        <input
+          v-model="form.phone"
+          type="tel"
+          :placeholder="$t('contact.form.number')"
+          class="p-L t-sb"
+        />
+        <textarea
+          v-model="form.message"
+          type="text"
+          :placeholder="$t('contact.form.message')"
+          class="p-L t-sb"
+        ></textarea>
+        <button :disabled="$v.$invalid" class="p-L t-sb ta-c t-white">{{$t('contact.form.send')}}</button>
       </form>
     </div>
     <div class="container map">
@@ -58,13 +77,13 @@
       ></iframe>
     </div>
     <div class="container credentials fd-r jc-b p-L t-white t-sb">
-      <a href="https://www.instagram.com/an.ildar/">
-        Developed by
+      <a href="https://www.upwork.com/freelancers/~01aa7aa6602c9494dc">
+        {{$t('contact.developer')}}
         <span>an.ildar</span>
       </a>
-      <span class="copyright">© {{ year }} UnimedTrade. Все права защищены</span>
-      <a href="https://www.instagram.com/an.ildar/">
-        Design:
+      <span class="copyright">© {{ year }} UnimedTrade. {{$t('contact.copyright')}}</span>
+      <a href="https://www.behance.net/zednight/moodboards">
+        {{$t('contact.designer')}}
         <span>Zednight</span>
       </a>
     </div>
@@ -72,17 +91,86 @@
 </template>
 
 <script>
+import {
+  email,
+  required,
+  minLength,
+  maxLength,
+  numeric,
+} from "vuelidate/lib/validators";
+
 export default {
   data: () => ({
     year: new Date().getFullYear(),
+    form: {
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+    },
   }),
+  methods: {
+    submit() {
+      this.$v.$touch();
+      if (this.$v.$invalid) {
+        return;
+      } else {
+        const formData = {
+          name: this.name,
+          "phone": this.phone,
+          "email": this.email,
+          "message": this.message,
+        };
+
+        this.$axios
+          .$post("https://unimedtrade.uz/send_marketing/", formData, {
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+              "Access-Control-Allow-Origin": "*",
+              "Access-Control-Allow-Methods":
+                "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+              "Content-Type": "application/json",
+            },
+          })
+          .then(() => {
+            alert("success");
+          })
+          .catch((error) => {
+            alert(error);
+          });
+      }
+    },
+  },
+  validations: {
+    form: {
+      name: {
+        required,
+        minLength: minLength(2),
+        maxLength: maxLength(50),
+      },
+      email: {
+        email,
+      },
+      phone: {
+        required,
+        numeric,
+        minLength: minLength(5),
+        maxLength: maxLength(17),
+      },
+      message: {
+        minLength: minLength(1),
+        maxLength: maxLength(200),
+      },
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 .contact {
   width: 100%;
-  background: url("@/assets/images/contact/bg.svg") no-repeat right #ea544a;
+  background: url("@/assets/images/contact/bg.svg") no-repeat right top #ea544a;
   margin-top: 230px;
   position: relative;
   &::before {
@@ -91,7 +179,6 @@ export default {
     width: 100%;
     height: 213px;
     background: url("@/assets/images/contact/after.svg") repeat-x center;
-    // background-size: 100% cover;
     position: absolute;
     top: -205px;
     left: 0;
@@ -149,6 +236,7 @@ export default {
         border-radius: 15px;
         padding: 20px;
         margin-bottom: 25px;
+        box-shadow: 0;
       }
       textarea {
         height: 100px;
@@ -159,6 +247,15 @@ export default {
         background: #ea544a;
         border-radius: 15px;
         padding: 20px;
+        transition: 0.2s;
+        cursor: pointer;
+        &:disabled {
+          filter: brightness(80%);
+        }
+        &:hover {
+          background: transparent;
+          color: #ea544a;
+        }
       }
     }
   }
