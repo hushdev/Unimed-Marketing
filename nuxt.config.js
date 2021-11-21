@@ -33,7 +33,7 @@ export default {
   plugins: [
     { src: '~/plugins/vue-smooth-scroll', ssr: false },
     { src: '~/plugins/vuelidate', },
-    {src: '~/plugins/axios'}
+    { src: '~/plugins/axios' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -49,7 +49,7 @@ export default {
     '@nuxtjs/i18n',
     ['nuxt-lazy-load', {
       // These are the default values
-      images: false,
+      images: true,
       videos: true,
       audios: true,
       iframes: true,
@@ -61,7 +61,6 @@ export default {
       loadingClass: 'isLoading',
       loadedClass: 'isLoaded',
       appendClass: 'lazyLoad',
-
     }]
   ],
 
@@ -86,11 +85,9 @@ export default {
       }
     ],
     defaultLocale: 'ru',
-    // messages: {
-    //   "ru": () => import('~/lang/ru-RU.js'),
-    //   "uz": () => import('~/lang/uz-UZ.js'),
-    //   "en": () => import('~/lang/en-US.js'),
-    // }
+  },
+  axios: {
+    proxy: false
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

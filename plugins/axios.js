@@ -1,12 +1,9 @@
 export default ({ $axios }) => {
   $axios.onRequest(config => {
+    // config.withCredentials = false
     config.headers = {
-      // 'Content-Type': 'application/json',
-      // 'Accept': 'application/json',
-      // 'Access-Control-Allow-Origin':  '*',
-      // 'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
-      // 'Content-Type': 'application/json',
+      crossorigin: true
     }
-    console.log(config.headers);
+    // console.log(config.headers);
   });
 }

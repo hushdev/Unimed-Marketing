@@ -6,8 +6,7 @@
       :class="{active: $i18n.locale === locale.code}"
       :key="locale.code"
       :href="switchLocalePath(locale.code)"
-    >{{locale.iso}}
-    </a>
+    >{{locale.iso}}</a>
   </div>
 </template>
 

@@ -12,6 +12,7 @@
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/i18n": "^7.0.2",
     "core-js": "^3.15.1",
+    "cors": "^2.8.5",
     "nuxt": "^2.15.7",
     "nuxt-lazy-load": "^1.2.7",
     "vue2-smooth-scroll": "^1.5.0",

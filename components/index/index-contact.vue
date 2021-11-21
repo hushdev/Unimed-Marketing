@@ -27,13 +27,10 @@
             </li>
           </div>
           <div class="socials fd-r ai-c">
-            <a href>
-              <img src="@/assets/images/facebook.svg" alt="Facebook" />
-            </a>
-            <a href>
+            <a href="https://www.instagram.com/unimed_trade/" target="_blank">
               <img src="@/assets/images/instagram.svg" alt="Instagram" />
             </a>
-            <a href>
+            <a href="https://t.me/Unmdbot" target="_blank">
               <img src="@/assets/images/telegram.svg" alt="Telegram" />
             </a>
           </div>
@@ -77,12 +74,12 @@
       ></iframe>
     </div>
     <div class="container credentials fd-r jc-b p-L t-white t-sb">
-      <a href="https://www.upwork.com/freelancers/~01aa7aa6602c9494dc">
+      <a class="p-S" href="https://www.upwork.com/freelancers/~01aa7aa6602c9494dc">
         {{$t('contact.developer')}}
         <span>an.ildar</span>
       </a>
-      <span class="copyright">© {{ year }} UnimedTrade. {{$t('contact.copyright')}}</span>
-      <a href="https://www.behance.net/zednight/moodboards">
+      <span class="copyright p-S">© {{ year }} UnimedTrade. {{$t('contact.copyright')}}</span>
+      <a class="p-S" href="https://www.behance.net/zednight/moodboards">
         {{$t('contact.designer')}}
         <span>Zednight</span>
       </a>
@@ -116,29 +113,23 @@ export default {
         return;
       } else {
         const formData = {
-          name: this.name,
-          "phone": this.phone,
-          "email": this.email,
-          "message": this.message,
+          // name: this.name,
+          phone: this.phone,
+          email: this.email,
+          message: this.message,
         };
 
-        this.$axios
-          .$post("https://unimedtrade.uz/send_marketing/", formData, {
-            headers: {
-              "Content-Type": "application/json",
-              Accept: "application/json",
-              "Access-Control-Allow-Origin": "*",
-              "Access-Control-Allow-Methods":
-                "GET,PUT,POST,DELETE,PATCH,OPTIONS",
-              "Content-Type": "application/json",
-            },
-          })
-          .then(() => {
-            alert("success");
-          })
-          .catch((error) => {
-            alert(error);
-          });
+        this.$axios.$post("https://unimedtrade.uz/send_marketing/", formData, {
+          headers: {
+            crossorigin:true
+          },
+        });
+        // .then(() => {
+        //   alert("success");
+        // })
+        // .catch((error) => {
+        //   alert(error);
+        // });
       }
     },
   },
@@ -170,9 +161,10 @@ export default {
 <style lang="scss" scoped>
 .contact {
   width: 100%;
-  background: url("@/assets/images/contact/bg.svg") no-repeat right top #ea544a;
+  background: url("@/assets/images/contact/bg.svg") no-repeat right 20px #ea544a;
   margin-top: 230px;
   position: relative;
+  padding-top: 30px;
   &::before {
     content: "";
     display: block;
@@ -249,9 +241,6 @@ export default {
         padding: 20px;
         transition: 0.2s;
         cursor: pointer;
-        &:disabled {
-          filter: brightness(80%);
-        }
         &:hover {
           background: transparent;
           color: #ea544a;

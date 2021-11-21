@@ -70,7 +70,7 @@ export default {
       .row {
         justify-content: space-between;
         &:nth-child(2) {
-          margin-top: 228px;
+          margin-top: 100px;
           .cards {
             .card {
               h3 {
