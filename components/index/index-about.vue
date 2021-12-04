@@ -124,9 +124,6 @@
     .container {
       .card {
         .info {
-          // display: flex;
-          // flex-direction: column;
-          // align-items: center;
           .info-item {
             min-width: unset;
             font-size: 12px;

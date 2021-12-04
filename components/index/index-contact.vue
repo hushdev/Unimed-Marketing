@@ -161,7 +161,7 @@ export default {
 <style lang="scss" scoped>
 .contact {
   width: 100%;
-  background: url("@/assets/images/contact/bg.svg") no-repeat right 20px #ea544a;
+  background: url("@/assets/images/contact/bg.svg") no-repeat right 20px #EA544A;
   margin-top: 230px;
   position: relative;
   padding-top: 30px;
@@ -224,7 +224,7 @@ export default {
       input,
       textarea {
         width: 100%;
-        border: 2px solid #ea544a;
+        border: 2px solid #EA544A;
         border-radius: 15px;
         padding: 20px;
         margin-bottom: 25px;
@@ -235,15 +235,15 @@ export default {
       }
       button {
         width: calc(100%);
-        border: 2px solid #ea544a;
-        background: #ea544a;
+        border: 2px solid #EA544A;
+        background: #EA544A;
         border-radius: 15px;
         padding: 20px;
         transition: 0.2s;
         cursor: pointer;
         &:hover {
           background: transparent;
-          color: #ea544a;
+          color: #EA544A;
         }
       }
     }
@@ -306,7 +306,6 @@ export default {
             margin-top: 40px;
             max-width: 238px;
             a {
-              // font-size: 16px;
               img {
                 width: 35px;
                 height: 35px;

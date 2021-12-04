@@ -40,13 +40,6 @@ export default {
 	animation: bg 1.5s ease forwards;
 }
 
-// .bg-anim {
-//   animation: bg 3.5s ease-in-out infinite;
-// }
-// .bg-anim-sm {
-//   animation: bgSM 3.5s ease-in-out infinite;
-// }
-
 @keyframes bg {
 	0% {
 		opacity: 0;
@@ -54,18 +47,7 @@ export default {
 	}
 	100% {
 		opacity: 1;
-		transform: scale(1) scaleZ(1);
+		transform: scale(1);
 	}
 }
-// @keyframes bgSM {
-//   0% {
-//     background-size: 100%;
-//   }
-//   50% {
-//     background-size: 110%;
-//   }
-//   100% {
-//     background-size: 100%;
-//   }
-// }
 </style>

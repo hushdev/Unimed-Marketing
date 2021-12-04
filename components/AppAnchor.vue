@@ -30,12 +30,12 @@ export default {
 
 <style lang="scss" scoped>
 .btn-red {
-  background: #ea544a !important;
+  background: #EA544A !important;
   color: #ffffff !important;
   &:hover {
     background: transparent !important;
-    border: 2px solid #ea544a !important;
-    color: #ea544a !important;
+    border: 2px solid #EA544A !important;
+    color: #EA544A !important;
   }
 }
 .button {

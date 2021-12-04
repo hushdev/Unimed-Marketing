@@ -44,7 +44,7 @@ export default {
   transform: translateY(50%);
   .logo {
     padding: 12px 0;
-    background: #ea544a;
+    background: #EA544A;
   }
   a {
     padding: 27px 0;
@@ -112,7 +112,7 @@ export default {
     .logo {
       min-width: 50px;
       min-height: 50px;
-      background: url("@/assets/images/star.svg") no-repeat center #ea544a;
+      background: url("@/assets/images/star.svg") no-repeat center #EA544A;
       background-size: 50%;
       border-radius: 10px;
       img {

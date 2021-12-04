@@ -25,7 +25,7 @@ export default {
   border: 2px solid #ffffff;
   &:hover {
     background: #ffffff;
-    color: #ea544a;
+    color: #EA544A;
   }
 }
 @media (max-width: 480px) {

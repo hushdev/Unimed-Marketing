@@ -33,7 +33,7 @@ export default {
     cursor: pointer;
   }
   .active {
-    color: #ea544a;
+    color: #EA544A;
   }
 }
 .red-langs {

@@ -162,13 +162,13 @@ export default {
 			}
 			.active {
 				position: relative;
-				color: #ea544a;
+				color: #EA544A;
 				transition: 0.2s;
 
 				&:after {
 					content: "";
 					transition: 0.2s;
-					background: #ea544a;
+					background: #EA544A;
 				}
 			}
 		}
@@ -185,7 +185,7 @@ export default {
 					word-break: break-all;
 				}
 				&:hover {
-					background: #ea544a;
+					background: #EA544A;
 					cursor: pointer;
 
 					* {
@@ -194,7 +194,7 @@ export default {
 				}
 			}
 			.card-red {
-				background: #ea544a;
+				background: #EA544A;
 				* {
 					color: #ffffff;
 				}

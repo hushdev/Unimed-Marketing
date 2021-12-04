@@ -38,7 +38,6 @@ export default {
 <style lang="scss" scoped>
 .faq {
   background: url("@/assets/images/faq/bg.svg") no-repeat right top;
-  // background-size: contain;  
   width: 100%;
   .container {
     display: flex;
@@ -67,7 +66,7 @@ export default {
         .question {
           padding: 0 20px 0 0 !important;
           border-radius: 10px;
-          border: 1px solid #ea544a;
+          border: 1px solid #EA544A;
           .question-text {
             padding: 10px 0;
           }
@@ -75,7 +74,7 @@ export default {
             min-width: 60px;
             min-height: 60px;
             height: 101%;
-            background: #ea544a;
+            background: #EA544A;
             border-bottom-left-radius: 8px;
             display: flex;
             align-items: center;

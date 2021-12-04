@@ -105,7 +105,7 @@ export default {};
       }
     &:nth-child(2) {
       z-index: 2;
-      background: url("@/assets/images/offer/bg2.svg") no-repeat center #ea544a;
+      background: url("@/assets/images/offer/bg2.svg") no-repeat center #EA544A;
       }
     &:nth-child(3) {
       z-index: 3;
@@ -113,7 +113,7 @@ export default {};
       }
     &:nth-child(4) {
       z-index: 4;
-      background: url("@/assets/images/offer/bg2.svg") no-repeat center #ea544a;
+      background: url("@/assets/images/offer/bg2.svg") no-repeat center #EA544A;
       }
   }
   .socials {
