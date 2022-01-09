@@ -51,8 +51,8 @@ export default {
 	mounted() {
 		document.onreadystatechange = () => {
 			setTimeout(() => {
-			  this.loaded = true;
-			}, 4500);
+				this.loaded = true;
+			}, 3000);
 		};
 	},
 };
@@ -78,13 +78,13 @@ export default {
 		justify-content: center;
 		align-items: center;
 		transform: translateX(63px);
-		animation: translate 0.4s ease-in-out forwards;
-		animation-delay: 2.5s;
+		animation: translate 0.5s ease-in-out forwards;
+		animation-delay: 1.7s;
 		.star-wrap {
 			position: relative;
 			transform: rotate(0);
 			animation: rotate 1.2s ease-in-out infinite;
-			animation-delay: 3s;
+			animation-delay: 2.3s;
 			width: 44.5px;
 			height: 50px;
 			.star-item {
@@ -100,28 +100,28 @@ export default {
 				left: 22px;
 				opacity: 0;
 				animation: item2 1.5s ease-in-out forwards;
-				animation-delay: 0.25s;
+				animation-delay: 0.1s;
 			}
 			.star-item-3 {
 				left: -7px;
 				top: 21px;
 				opacity: 0;
 				animation: item3 1.5s ease-in-out forwards;
-				animation-delay: 0.4s;
+				animation-delay: 0.1s;
 			}
 			.star-item-4 {
 				left: 30px;
 				top: 21px;
 				opacity: 0;
 				animation: item4 1.5s ease-in-out forwards;
-				animation-delay: 0.55s;
+				animation-delay: 0.1s;
 			}
 			.star-item-5 {
 				left: 12px;
 				top: 34px;
 				opacity: 0;
 				animation: item5 1.5s ease-in-out forwards;
-				animation-delay: 0.7s;
+				animation-delay: 0.1s;
 			}
 		}
 		.text {
@@ -129,8 +129,8 @@ export default {
 			margin-top: 3px;
 			transform: translateX(-100px);
 			opacity: 0;
-			animation: show 0.4s 0.9s ease-in-out forwards;
-			animation-delay: 2.5s;
+			animation: show 0.5s 0.9s ease-in-out forwards;
+			animation-delay: 1.7s;
 		}
 	}
 }

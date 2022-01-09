@@ -8,7 +8,7 @@
         <ul class="info">
           <div class="list">
             <li>
-              <a class="p-XL t-white t-b" href>
+              <a class="p-XL t-white t-b" href="https://yandex.ru/maps/-/CCUuvQr4tD">
                 <img src="@/assets/images/contact/geo.svg" alt="Адрес" />
                 {{$t('contact.adress')}}
               </a>
