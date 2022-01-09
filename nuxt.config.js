@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Unimed Marketing',
+    title: 'Unimed Consulting',
     htmlAttrs: {
       lang: 'ru'
     },
@@ -32,8 +32,6 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: '~/plugins/vue-smooth-scroll', ssr: false },
-    { src: '~/plugins/vuelidate', },
-    { src: '~/plugins/axios' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

@@ -23,6 +23,7 @@ export default {
   outline: 0;
   font-weight: 600;
   border: 2px solid #ffffff;
+  cursor: pointer;
   &:hover {
     background: #ffffff;
     color: #EA544A;

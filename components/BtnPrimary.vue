@@ -25,6 +25,7 @@ export default {
   outline: 0;
   border: 2px solid transparent;
   font-weight: 600;
+  cursor: pointer;
   &:hover {
     background: transparent;
     color: #ffffff;
