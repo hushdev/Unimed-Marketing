@@ -2,7 +2,6 @@
 	<div class="app">
 		<app-loader />
 		<index-offer />
-
 		<div class="screen fd-c ai-c" id="main">
 			<index-about />
 			<index-services />
@@ -39,6 +38,9 @@ export default {
 .isLoaded {
 	animation: bg 1.5s ease forwards;
 }
+
+.fadeIn-enter-active, .fadeIn-leave-active { transition: opacity .5s; }
+  .fadeIn-enter, .fadeIn-leave-active { opacity: 0; }
 
 @keyframes bg {
 	0% {

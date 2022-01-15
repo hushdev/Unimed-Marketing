@@ -1,5 +1,8 @@
 <template>
 	<div class="contact red bg-anim-sm" id="contact">
+		<transition name="fadeIn">
+			<index-contact-modal v-if="showContactModal" @close="showContactModal = false"/>
+		</transition>
 		<div class="container">
 			<app-h2 :text="$t('contact.title')" />
 		</div>
@@ -27,7 +30,7 @@
 						</li>
 					</div>
 					<div class="socials fd-r ai-c">
-						<BtnPrimary text="Заказать звонок" class="mr-3" />
+						<BtnPrimary text="Заказать звонок" class="mr-3" @click.native="showContactModal = !showContactModal"/>
 						<a href="https://www.instagram.com/unimed_trade/" target="_blank">
 							<img src="@/assets/images/instagram.svg" alt="Instagram" />
 						</a>
@@ -62,9 +65,12 @@
 </template>
 
 <script>
+import indexContactModal from './index-contact-modal.vue';
 export default {
+	components: { indexContactModal },
 	data: () => ({
 		year: new Date().getFullYear(),
+		showContactModal: false
 	}),
 };
 </script>
